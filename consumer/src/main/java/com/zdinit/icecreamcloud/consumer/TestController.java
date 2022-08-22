@@ -13,7 +13,6 @@ public class TestController {
 
     @RequestMapping(value = "/testConsumer", method = RequestMethod.GET)
     public String testConsumer() {
-         provideFeign.testApi();
-         return null;
+         return provideFeign.testApi();
     }
 }

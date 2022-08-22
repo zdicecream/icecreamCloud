@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProvideController {
 
     @GetMapping("/provideTest")
-    public void provide(){
+    public String provide(){
         log.info("provide is me_");
+        return "1";
     }
 }

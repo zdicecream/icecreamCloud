@@ -24,11 +24,11 @@
         <module>gateway</module>
     </modules>
     <dependencies>
-        <!--  Spring Cloud Gateway 是使用 netty+webflux实现，webflux与web是冲突的
+        <!--  Spring Cloud Gateway 是使用 netty+webflux实现，webflux与web是冲突的 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>-->
+        </dependency>
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
