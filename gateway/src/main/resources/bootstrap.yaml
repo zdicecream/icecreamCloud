@@ -15,3 +15,5 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
+          filters:
+            StripPrefix=0

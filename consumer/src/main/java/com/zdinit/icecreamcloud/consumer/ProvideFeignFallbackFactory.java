@@ -1,15 +1,10 @@
-package com.zdinit.icecreamcloud.api;
+package com.zdinit.icecreamcloud.consumer;
 
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
-public class ProvideFeignFallbackFactory{
-
-}
-
-
-/*@Slf4j
+@Slf4j
 @Component
 public class ProvideFeignFallbackFactory implements FallbackFactory<IProvideFeign> {
     @Override
@@ -23,4 +18,4 @@ public class ProvideFeignFallbackFactory implements FallbackFactory<IProvideFeig
             }
         };
     }
-}*/
+}

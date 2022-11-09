@@ -10,3 +10,7 @@ spring:
       config:
         server-addr: 127.0.0.1:8848
         file-extension: yaml
+##openFeign整合sentinel熔断
+feign:
+  sentinel:
+    enabled: true

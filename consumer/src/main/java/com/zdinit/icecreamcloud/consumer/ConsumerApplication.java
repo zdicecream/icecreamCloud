@@ -9,7 +9,7 @@ import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-@EnableFeignClients(basePackages = {"com.zdinit.icecreamcloud.api"})
+@EnableFeignClients(basePackages = {"com.zdinit.icecreamcloud.consumer"})
 public class ConsumerApplication {
 
     public static void main(String[] args) {
