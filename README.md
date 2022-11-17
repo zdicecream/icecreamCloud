@@ -52,7 +52,7 @@ project
 　　　　　　|--service  
 　　　　　　|--mapper  
 　　|--monitor 系统监控 springbootAdmin  
-　　|--api  
+　　|--api（考虑要不要直接在调用端实现）  
 　　　　|--entity  （具体的各种实体entity调用db模块，此次主要为 apiCommonResponse(废弃，应该和写在base的commonResponse是一个)）  
 　　　　|--Feign  
 　　　　|--FeignFallbackFactory  

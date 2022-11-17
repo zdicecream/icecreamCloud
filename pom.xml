@@ -4,6 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.zdinit</groupId>
     <artifactId>icecreamCloud</artifactId>
+    <packaging>pom</packaging>
     <version>0.0.1-SNAPSHOT</version>
     <name>icecreamCloud</name>
     <description>Demo project for Spring Boot</description>
@@ -20,8 +21,8 @@
     <modules>
         <module>provide</module>
         <module>consumer</module>
-        <module>api</module>
         <module>gateway</module>
+        <module>common</module>
     </modules>
     <dependencies>
         <!--  Spring Cloud Gateway 是使用 netty+webflux实现，webflux与web是冲突的
@@ -110,9 +111,6 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>2.3.7.RELEASE</version>
-                <configuration>
-                    <mainClass>com.example.demo.DemoApplication</mainClass>
-                </configuration>
                 <executions>
                     <execution>
                         <id>repackage</id>

@@ -6,7 +6,7 @@
         <groupId>com.zdinit</groupId>
         <artifactId>icecreamCloud</artifactId>
         <version>0.0.1-SNAPSHOT</version>
-        <relativePath/> <!-- lookup parent from repository -->
+        <!--  <relativePath/>  lookup parent from repository -->
     </parent>
     <groupId>com.zdinit.icecreamCloud</groupId>
     <artifactId>consumer</artifactId>
