@@ -12,8 +12,9 @@
     <artifactId>common</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>common-db</module>
-        <module>common-base</module>
+        <module>db</module>
+        <module>base</module>
+        <module>entity</module>
     </modules>
 
 

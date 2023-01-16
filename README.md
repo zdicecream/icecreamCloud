@@ -18,31 +18,34 @@
 >**文件目录**
   
 project  
-　　|--common 通用  
-　　　　|--base （response controller constant(常量) enums(枚举) exception） 全局异常 通用Util（excel）  
-　　　　　　|--config   
-　　　　　　　　|--fastJson  （待定）  
+　　|--common 通用       
+　　　　|--base           
+　　　　　　|--base（response controller constant(常量) enums(枚举) exception）     
+　　　　　　|--config    
+　　　　　　　　|--fastJson    
 　　　　　　　　|--日志框架（待定）  
+　　　　　　　　|--redis    
+　　　　　　　　|--全局异常   
+　　　　　　　　|--权限认证   
+　　　　　　|--通用entity(废弃，抽离成模块)    
+　　　　　　|--feign   
+　　　　　　|--util（excel，httpClient，response）  
 　　　　|--db  
 　　　　　　|--config  
 　　　　　　　　|--mybatis  
 　　　　　　　　|--mybatis-plus  
 　　　　　　　　|--DruidConfig Druid连接池  
 　　　　　　　　|--idGenerator id生成器（待定）  
-　　　　　　|--common 通用实体  
-　　　　　　　　|--entity  
-　　　　　　　　|--service  
-　　　　　　　　|--mapper  
-　　　　|--redis  
+　　　　　　　　|--codeGenerator 代码生成器  
+　　　　|--entity 通用实体  
+　　　　|--redis（废弃，转移至base）  
 　　　　　　|--config   
-　　　　　　　　|--redis  
-　　　　|--springBatch批量任务（目前感觉系统还不到需要批处理的地步）  
-　　　　|--Quartz（或者xxl-job）调度框架  
+　　　　　　　　|--redis    
 　　　　|--swagger 接口文档  
 　　　　　　|--config   
 　　　　　　　　|--swagger2 接口文档  
 　　|--gateway 网关  
-　　|--codeGenerator 代码生成器  
+　　|--dispatch（Quartz或者xxl-job）调度(和springBatch批量任务合并)  
 　　|--auth 权限  
 　　　　|--config   
 　　　　　　|--saToken 权限认证  

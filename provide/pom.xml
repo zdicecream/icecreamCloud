@@ -20,25 +20,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework.boot</groupId>
-                    <artifactId>spring-boot-starter-tomcat</artifactId>
-                </exclusion>
-            </exclusions>
-        </dependency>
-
-        <dependency>
-            <groupId>com.tongweb.springboot</groupId>
-            <artifactId>tongweb-spring-boot-starter-2.x</artifactId>
-            <version>7.0.E.4</version>
-        </dependency>
-        <dependency>
-            <groupId>com.tongweb</groupId>
-            <artifactId>tongweb-embed</artifactId>
-            <version>7.0.E.4</version>
+            <groupId>com.zdinit</groupId>
+            <artifactId>base</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 

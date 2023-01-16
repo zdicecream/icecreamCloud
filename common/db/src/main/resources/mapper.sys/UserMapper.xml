@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zdinit.icecreamCloud.common.entity.mapper.sys.UserMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.zdinit.icecreamcloud.common.entity.sys.entity.User">
+        <id column="id" property="id" />
+        <result column="username" property="username" />
+        <result column="password" property="password" />
+        <result column="showName" property="showName" />
+        <result column="mobile" property="mobile" />
+        <result column="email" property="email" />
+        <result column="create_time" property="createTime" />
+        <result column="last_login_time" property="lastLoginTime" />
+        <result column="login_count" property="loginCount" />
+        <result column="group_id" property="groupId" />
+        <result column="state" property="state" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, username, password, showname, mobile, email, create_time, last_login_time, login_count, group_id, state
+    </sql>
+
+    <insert id="saveRole">
+        insert into sys_user_role values (#{userid},#{roleid})
+    </insert>
+
+    <delete id="deleRole">
+        delete from sys_user_role where userid= #{userid} and roleid= #{roleid}
+    </delete>
+
+    <delete id="deleRoleByUserId">
+        delete from sys_user_role where userid= #{userId}
+    </delete>
+
+    <select id="listUserByRoleId" resultType="com.zdinit.icecream.sys.entity.User">
+        select su.* from sys_user su left join sys_user_role sur on sur.userid=su.id
+        where sur.roleid = #{id}
+    </select>
+</mapper>
