@@ -41,7 +41,7 @@ project
 　　　　|--redis（废弃，转移至base）  
 　　　　　　|--config   
 　　　　　　　　|--redis    
-　　　　|--swagger 接口文档  
+　　　　|--swagger 接口文档(合并到base)  
 　　　　　　|--config   
 　　　　　　　　|--swagger2 接口文档  
 　　|--gateway 网关  

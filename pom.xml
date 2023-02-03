@@ -17,6 +17,7 @@
         <spring-cloud-alibaba.version>2.2.2.RELEASE</spring-cloud-alibaba.version>
         <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
         <mybatis-plus-boot>3.3.2</mybatis-plus-boot>
+        <swagger2.version>2.9.2</swagger2.version>
     </properties>
 
     <modules>
@@ -24,6 +25,7 @@
         <module>consumer</module>
         <module>gateway</module>
         <module>common</module>
+        <module>dispatch</module>
     </modules>
     <dependencies>
         <!--  Spring Cloud Gateway 是使用 netty+webflux实现，webflux与web是冲突的
