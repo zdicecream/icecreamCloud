@@ -13,7 +13,7 @@
     <dependencies>
         <dependency>
             <groupId>com.zdinit</groupId>
-            <artifactId>entity</artifactId>
+            <artifactId>redis</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <!--  Spring Cloud Gateway 是使用 netty+webflux实现，webflux与web是冲突的 -->
@@ -26,34 +26,13 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
             <version>${mybatis-plus-boot}</version>
         </dependency>
-        <!--reids支持-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.commons</groupId>
-            <artifactId>commons-pool2</artifactId>
-            <version>2.6.2</version>
-        </dependency>
-        <!-- Sa-Token 权限认证, 在线文档：http://sa-token.dev33.cn/ -->
-        <dependency>
-            <groupId>cn.dev33</groupId>
-            <artifactId>sa-token-spring-boot-starter</artifactId>
-            <version>1.20.0</version>
-        </dependency>
-        <!-- Sa-Token整合redis (使用jackson序列化方式) -->
-        <dependency>
-            <groupId>cn.dev33</groupId>
-            <artifactId>sa-token-dao-redis-jackson</artifactId>
-            <version>1.21.0</version>
-        </dependency>
-        <!--fastJson__alibaba-->
+
+        <!--fastJson__alibaba  redis使用jackson，目前差fastjson优势不明显，打算去掉
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.70</version>
-        </dependency>
+        </dependency>-->
         <!--Swagger2 自动API文档-->
         <dependency>
             <groupId>io.springfox</groupId>

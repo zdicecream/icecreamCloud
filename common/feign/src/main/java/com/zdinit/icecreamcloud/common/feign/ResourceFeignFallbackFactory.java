@@ -1,4 +1,4 @@
-package com.zdinit.icecreamcloud.common.base.feign;
+package com.zdinit.icecreamcloud.common.feign;
 
 
 
@@ -25,7 +25,7 @@ public class ResourceFeignFallbackFactory implements FallbackFactory<IResourceFe
             }
 
             @Override
-            public List<Role> roleList() {
+            public List<Role> listRoleByUserId() {
                 log.info("熔断降级");
                 return new ArrayList<>();
             }

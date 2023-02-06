@@ -22,7 +22,7 @@ project
 　　　　|--base           
 　　　　　　|--base（response controller constant(常量) enums(枚举) exception）     
 　　　　　　|--config    
-　　　　　　　　|--fastJson    
+　　　　　　　　|--序列化(fastJson、jackson)    
 　　　　　　　　|--日志框架（待定）  
 　　　　　　　　|--redis    
 　　　　　　　　|--全局异常   
@@ -38,27 +38,25 @@ project
 　　　　　　　　|--idGenerator id生成器（待定）  
 　　　　　　　　|--codeGenerator 代码生成器  
 　　　　|--entity 通用实体  
+　　　　|--feign 服务调用  
 　　　　|--redis（废弃，转移至base）  
 　　　　　　|--config   
 　　　　　　　　|--redis    
 　　　　|--swagger 接口文档(合并到base)  
 　　　　　　|--config   
 　　　　　　　　|--swagger2 接口文档  
-　　|--gateway 网关  
+　　|--gateway 网关   
+　　　　|--config (权限认证，全局登录异常)  
 　　|--dispatch（Quartz或者xxl-job）调度(和springBatch批量任务合并)  
 　　|--auth 权限  
 　　　　|--config   
-　　　　　　|--saToken 权限认证  
+　　　　　　|--saToken 权限认证（转移至gateway）  
 　　　　|--auth  
 　　　　　　|--controller  
 　　　　　　|--entity  
 　　　　　　|--service  
 　　　　　　|--mapper  
 　　|--monitor 系统监控 springbootAdmin  
-　　|--api（考虑要不要直接在调用端实现）  
-　　　　|--entity  （具体的各种实体entity调用db模块，此次主要为 apiCommonResponse(废弃，应该和写在base的commonResponse是一个)）  
-　　　　|--Feign  
-　　　　|--FeignFallbackFactory  
 　　|--business 业务模块  
 　　　　|--系统管理  
 　　　　　　|--字典  

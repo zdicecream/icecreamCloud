@@ -1,5 +1,4 @@
-package com.zdinit.icecreamcloud.common.base.feign;
-
+package com.zdinit.icecreamcloud.common.feign;
 
 
 import com.zdinit.icecreamcloud.common.entity.sys.entity.Resource;
@@ -21,6 +20,6 @@ import java.util.List;
 public interface IResourceFeign {
     @RequestMapping(value = "/listResourceByUserId",method = RequestMethod.GET)
     List<Resource> listResourceByUserId(Long id);
-    @RequestMapping(value = "/roleList",method = RequestMethod.GET)
-    List<Role> roleList();
+    @RequestMapping(value = "/listRoleByUserId",method = RequestMethod.GET)
+    List<Role> listRoleByUserId();
 }
