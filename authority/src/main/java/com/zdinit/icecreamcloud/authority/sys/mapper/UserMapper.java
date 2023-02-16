@@ -1,9 +1,7 @@
-package com.zdinit.icecreamcloud.common.db.sys.mapper;
+package com.zdinit.icecreamcloud.authority.sys.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.zdinit.icecreamcloud.common.entity.sys.entity.User;
-
-
 import java.util.List;
 
 /**

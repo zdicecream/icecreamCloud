@@ -10,7 +10,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 //Mybatisplus 分页插件
 @EnableTransactionManagement  //开启事务
 @Configuration
-@MapperScan("com.zdinit.icecream.**.mapper")
+@MapperScan("com.zdinit.icecreamcloud.**.**.mapper")
 public class MybatisConfig {
     @Bean
     public PaginationInterceptor paginationInterceptor() {

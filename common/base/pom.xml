@@ -11,11 +11,6 @@
     <artifactId>base</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.zdinit</groupId>
-            <artifactId>redis</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
         <!--  Spring Cloud Gateway 是使用 netty+webflux实现，webflux与web是冲突的 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

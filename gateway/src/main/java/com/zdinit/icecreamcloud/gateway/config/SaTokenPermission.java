@@ -10,6 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
 /**
@@ -24,19 +25,23 @@ public class SaTokenPermission implements StpInterface {
 
     @Override
     public List<String> getPermissionList(Object loginId, String loginType) {
-        List<String> permissionList = (List<String>) redisTemplate.opsForHash().get(loginId,"Resource");
+        List<String> permissionList = (List<String>) redisTemplate.opsForList().range("Resource:"+loginId,0,-1);
         if (permissionList == null || permissionList.size() <= 0) {
             permissionList = resourceService.listResourceByUserId(Long.parseLong((String) loginId)).stream().filter(m->m.getType().equals(CommonValue.MENU)).map(m-> m.getResourceCode()).collect(Collectors.toList());
+            redisTemplate.opsForList().leftPushAll("Resource:"+loginId,permissionList);
         }
+        redisTemplate.expire("Resource:"+loginId,30 * 60, TimeUnit.SECONDS);
         return permissionList;
     }
 
     @Override
     public List<String> getRoleList(Object loginId, String loginType) {
-        List<String> roleList = (List<String>) redisTemplate.opsForHash().get(loginId,"Role");
+        List<String> roleList = (List<String>) redisTemplate.opsForList().range("Role:"+loginId,0,-1);
         if (roleList == null) {
             roleList = resourceService.listRoleByUserId().stream().map(role -> role.getRoleName()).collect(Collectors.toList());
+            redisTemplate.opsForList().leftPushAll("Role:"+loginId,roleList);
         }
+        redisTemplate.expire("Role:"+loginId,30 * 60, TimeUnit.SECONDS);
         return roleList;
     }
 }

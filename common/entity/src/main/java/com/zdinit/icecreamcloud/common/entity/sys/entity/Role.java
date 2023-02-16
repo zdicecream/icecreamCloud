@@ -1,8 +1,5 @@
 package com.zdinit.icecreamcloud.common.entity.sys.entity;
 
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableName;
-import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -19,8 +16,7 @@ import java.util.List;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-@TableName("sys_role")
-public class Role extends Model<Role> {
+public class Role implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -30,12 +26,7 @@ public class Role extends Model<Role> {
 
     private Integer state;
 
-    @TableField(exist = false)
     private List resourceList;
 
-    @Override
-    protected Serializable pkVal() {
-        return this.id;
-    }
 
 }

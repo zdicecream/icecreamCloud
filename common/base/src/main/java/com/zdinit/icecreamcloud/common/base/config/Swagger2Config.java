@@ -21,7 +21,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @Profile({"dev","test"})
 /**
  * dev,test环境开启ui，prod环境关闭ui
- * 网址http://localhost:8088/api/swagger-ui.html
+ * 网址http://localhost:xxxx/swagger-ui.html
   */
 
 public class Swagger2Config {

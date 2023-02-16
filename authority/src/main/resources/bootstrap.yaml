@@ -1,11 +1,9 @@
+#端口号
 server:
-  port: 8004
-  tongweb:
-    license:
-      path: classpath:icense.dat
+  port: 8010
 spring:
   application:
-    name: provide
+    name: authority
   cloud:
     nacos:
       discovery:
@@ -16,5 +14,7 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
-
-
+##openFeign整合sentinel熔断
+feign:
+  sentinel:
+    enabled: true

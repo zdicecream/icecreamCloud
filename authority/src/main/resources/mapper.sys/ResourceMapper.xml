@@ -3,7 +3,7 @@
 <mapper namespace="com.zdinit.icecream.sys.mapper.ResourceMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zdinit.icecreamcloud.common.entity.sys.entity.Resource">
+    <resultMap id="BaseResultMap" type="com.zdinit.icecream.sys.entity.Resource">
         <id column="id" property="id" />
         <result column="resourcename" property="resourceName" />
         <result column="pid" property="pid" />
@@ -17,8 +17,8 @@
     </sql>
 
     <select id="listResourceByids" resultType="com.zdinit.icecream.sys.entity.Resource">
-        select sr.*,srr.roleid from sys_resource sr left join sys_role_resource srr on srr.resourceid=sr.id
-        where srr.roleid in
+        select sr.*,srr.role_id from sys_resource sr left join sys_role_resource srr on srr.resource_id=sr.id
+        where srr.role_id in
         <foreach item="item" index="index" collection="list"
                  open="(" separator="," close=")">
             #{item}
@@ -26,16 +26,16 @@
     </select>
 
     <select id="listResourceByid" resultType="com.zdinit.icecream.sys.entity.Resource" >
-        select sr.*,srr.roleid from sys_resource sr left join sys_role_resource srr on srr.resourceid=sr.id
-        where srr.roleid = #{id}
+        select sr.*,srr.role_id from sys_resource sr left join sys_role_resource srr on srr.resource_id=sr.id
+        where srr.role_id = #{id}
     </select>
 
     <delete id="delResource">
-        delete from sys_role_resource where roleid= #{roleId} and resourceid= #{resourceId}
+        delete from sys_role_resource where role_id= #{roleId} and resource_id= #{resourceId}
     </delete>
 
     <delete id="delResourceByRoleId">
-        delete from sys_role_resource where roleid= #{roleId}
+        delete from sys_role_resource where role_id= #{roleId}
     </delete>
 
     <insert id="addResource">
@@ -43,11 +43,11 @@
     </insert>
 
     <select id="listRoleByResourceId" resultType="com.zdinit.icecream.sys.entity.Role">
-        select sr.* from sys_role sr left join sys_role_resource srr on srr.roleid=sr.id
-        where srr.resourceid = #{id}
+        select sr.* from sys_role sr left join sys_role_resource srr on srr.role_id=sr.id
+        where srr.resource_id = #{id}
     </select>
 
     <select id="listResourceByUserId" resultType="com.zdinit.icecream.sys.entity.Resource">
-        select sr.* from sys_user_role sur,sys_role_resource srr,sys_resource sr where sur.roleid=srr.roleid and srr.resourceid=sr.id and sur.userid= #{id}
+        select sr.* from sys_user_role sur,sys_role_resource srr,sys_resource sr where sur.role_id=srr.role_id and srr.resource_id=sr.id and sur.user_id= #{id}
     </select>
 </mapper>

@@ -3,7 +3,7 @@
 <mapper namespace="com.zdinit.icecream.sys.mapper.RoleMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zdinit.icecreamcloud.common.entity.sys.entity.Role">
+    <resultMap id="BaseResultMap" type="com.zdinit.icecream.sys.entity.Role">
         <id column="id" property="id" />
         <result column="rolename" property="roleName" />
         <result column="state" property="state" />
@@ -15,8 +15,8 @@
     </sql>
 
     <select id="listRoleByIds" resultType="com.zdinit.icecream.sys.vo.RoleVo">
-        select sr.*,sur.userid from sys_role sr left join sys_user_role sur on sur.roleid=sr.id
-        where sur.userid in
+        select sr.*,sur.user_id from sys_role sr left join sys_user_role sur on sur.role_id=sr.id
+        where sur.user_id in
         <foreach item="item" index="index" collection="list"
                  open="(" separator="," close=")">
             #{item}
@@ -25,7 +25,7 @@
 
     <select id="listRoleByUserId" resultType="com.zdinit.icecream.sys.entity.Role">
         select sr.* from sys_role sr left join sys_user_role sur on sur.roleid=sr.id
-        where sur.userid = #{id}
+        where sur.user_id = #{id}
     </select>
 
 </mapper>

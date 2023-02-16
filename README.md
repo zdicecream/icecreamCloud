@@ -23,12 +23,9 @@ project
 　　　　　　|--base（response controller constant(常量) enums(枚举) exception）     
 　　　　　　|--config    
 　　　　　　　　|--序列化(fastJson、jackson)    
-　　　　　　　　|--日志框架（待定）  
-　　　　　　　　|--redis    
-　　　　　　　　|--全局异常   
-　　　　　　　　|--权限认证   
-　　　　　　|--通用entity(废弃，抽离成模块)    
-　　　　　　|--feign   
+　　　　　　　　|--日志框架（logback）     
+　　　　　　　　|--全局异常
+　　　　　　　　|--swagger2 接口文档           
 　　　　　　|--util（excel，httpClient，response）  
 　　　　|--db  
 　　　　　　|--config  
@@ -39,18 +36,13 @@ project
 　　　　　　　　|--codeGenerator 代码生成器  
 　　　　|--entity 通用实体  
 　　　　|--feign 服务调用  
-　　　　|--redis（废弃，转移至base）  
+　　　　|--redis  
 　　　　　　|--config   
 　　　　　　　　|--redis    
-　　　　|--swagger 接口文档(合并到base)  
-　　　　　　|--config   
-　　　　　　　　|--swagger2 接口文档  
 　　|--gateway 网关   
-　　　　|--config (权限认证，全局登录异常)  
+　　　　|--config (权限认证，登录异常处理)  
 　　|--dispatch（Quartz或者xxl-job）调度(和springBatch批量任务合并)  
 　　|--auth 权限  
-　　　　|--config   
-　　　　　　|--saToken 权限认证（转移至gateway）  
 　　　　|--auth  
 　　　　　　|--controller  
 　　　　　　|--entity  

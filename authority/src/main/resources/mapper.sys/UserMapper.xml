@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zdinit.icecreamCloud.common.entity.mapper.sys.UserMapper">
+<mapper namespace="com.zdinit.icecream.sys.mapper.UserMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zdinit.icecreamcloud.common.entity.sys.entity.User">
+    <resultMap id="BaseResultMap" type="com.zdinit.icecream.sys.entity.User">
         <id column="id" property="id" />
         <result column="username" property="username" />
         <result column="password" property="password" />
@@ -27,15 +27,15 @@
     </insert>
 
     <delete id="deleRole">
-        delete from sys_user_role where userid= #{userid} and roleid= #{roleid}
+        delete from sys_user_role where user_id= #{userid} and role_id= #{roleid}
     </delete>
 
     <delete id="deleRoleByUserId">
-        delete from sys_user_role where userid= #{userId}
+        delete from sys_user_role where user_id= #{userId}
     </delete>
 
     <select id="listUserByRoleId" resultType="com.zdinit.icecream.sys.entity.User">
-        select su.* from sys_user su left join sys_user_role sur on sur.userid=su.id
-        where sur.roleid = #{id}
+        select su.* from sys_user su left join sys_user_role sur on sur.user_id=su.id
+        where sur.role_id = #{id}
     </select>
 </mapper>
