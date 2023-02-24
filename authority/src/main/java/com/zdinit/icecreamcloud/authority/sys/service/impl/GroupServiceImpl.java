@@ -4,7 +4,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 
 import com.zdinit.icecreamcloud.authority.sys.mapper.GroupMapper;
 import com.zdinit.icecreamcloud.authority.sys.service.IGroupService;
-import com.zdinit.icecreamcloud.common.entity.sys.entity.Group;
+import com.zdinit.icecreamcloud.authority.sys.entity.Group;
 import org.springframework.stereotype.Service;
 
 /**

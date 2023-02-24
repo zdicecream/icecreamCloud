@@ -2,8 +2,8 @@ package com.zdinit.icecreamcloud.common.feign;
 
 
 
-import com.zdinit.icecreamcloud.common.entity.sys.entity.Resource;
-import com.zdinit.icecreamcloud.common.entity.sys.entity.Role;
+import com.zdinit.icecreamcloud.common.entity.sys.entity.ResourceVo;
+import com.zdinit.icecreamcloud.common.entity.sys.entity.RoleVo;
 import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
@@ -19,13 +19,13 @@ public class ResourceFeignFallbackFactory implements FallbackFactory<IResourceFe
         log.info("异常原因："+throwable.getMessage());
         return new IResourceFeign() {
             @Override
-            public List<Resource> listResourceByUserId(Long id) {
+            public List<ResourceVo> listResourceByUserId(Long id) {
                 log.info("熔断降级");
                 return new ArrayList<>();
             }
 
             @Override
-            public List<Role> listRoleByUserId() {
+            public List<RoleVo> listRoleByUserId(Long id) {
                 log.info("熔断降级");
                 return new ArrayList<>();
             }

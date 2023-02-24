@@ -12,21 +12,32 @@ import java.util.List;
  * </p>
  *
  * @author zd
- * @since 2021-05-06
+ * @since 2021-06-10
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class Role implements Serializable {
+public class ResourceVo implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
     private Long id;
 
-    private String roleName;
+    private String resourceCode;
 
-    private Integer state;
+    private String resourceName;
 
-    private List resourceList;
+    private Long pid;
 
+    private Integer orders;
+
+    private Integer type;
+
+    private Integer leaf;
+
+    private Long roleId;
+
+    private List actionList;
+
+    private List<ResourceVo> children;
 
 }

@@ -3,7 +3,7 @@
 <mapper namespace="com.zdinit.icecreamcloud.authority.sys.mapper.GroupMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zdinit.icecreamcloud.common.entity.sys.entity.Group">
+    <resultMap id="BaseResultMap" type="com.zdinit.icecreamcloud.authority.sys.entity.Group">
         <id column="id" property="id" />
         <result column="groupname" property="groupname" />
         <result column="groupcode" property="groupcode" />

@@ -10,6 +10,8 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.scheduling.quartz.QuartzJobBean;
 import org.springframework.stereotype.Component;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * 定时任务
  */
@@ -24,7 +26,9 @@ public class WeCatTask extends QuartzJobBean {
     private StepBuilderFactory stepBuilderFactory;
     @Override
     protected void executeInternal(JobExecutionContext jobExecutionContext) throws JobExecutionException {
-       redisTemplate.opsForValue().set("data","TaskTest",3000l);
-       log.info(redisTemplate.opsForValue().get("data").toString());
+        String a  = "{user:1}";
+        redisTemplate.opsForValue().set("data",a,3000l, TimeUnit.SECONDS);
+        String res = (String) redisTemplate.opsForValue().get("data");
+        log.info(res);
     }
 }

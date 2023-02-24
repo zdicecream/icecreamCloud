@@ -16,5 +16,9 @@ spring:
     loadbalancer:
       ribbon:
         enabled: false
+##openFeign整合sentinel熔断
+feign:
+  sentinel:
+    enabled: true
 
 

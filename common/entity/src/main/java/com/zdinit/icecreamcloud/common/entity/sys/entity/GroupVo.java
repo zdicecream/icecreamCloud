@@ -4,7 +4,6 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
-import java.util.List;
 
 /**
  * <p>
@@ -12,32 +11,22 @@ import java.util.List;
  * </p>
  *
  * @author zd
- * @since 2021-06-10
+ * @since 2021-05-06
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class Resource implements Serializable{
+public class GroupVo implements Serializable{
 
     private static final long serialVersionUID = 1L;
 
     private Long id;
 
-    private String resourceCode;
+    private String groupName;
 
-    private String resourceName;
+    private String groupCode;
 
     private Long pid;
 
-    private Integer orders;
-
-    private Integer type;
-
-    private Integer leaf;
-
-    private Long roleId;
-
-    private List actionList;
-
-    private List<Resource> children;
+    private Integer state;
 
 }

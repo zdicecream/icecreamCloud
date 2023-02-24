@@ -1,8 +1,9 @@
+#端口号
 server:
-  port: 8801
+  port: 8005
 spring:
   application:
-    name: gateway
+    name: dispatch
   cloud:
     nacos:
       discovery:
@@ -10,13 +11,6 @@ spring:
       config:
         server-addr: 127.0.0.1:8848
         file-extension: yaml
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-          filters:
-            StripPrefix=0
     loadbalancer:
       ribbon:
         enabled: false

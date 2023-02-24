@@ -1,5 +1,7 @@
-package com.zdinit.icecreamcloud.common.entity.sys.entity;
+package com.zdinit.icecreamcloud.authority.sys.entity;
 
+import com.baomidou.mybatisplus.annotation.TableName;
+import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -15,7 +17,8 @@ import java.io.Serializable;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class Group implements Serializable{
+@TableName("sys_group")
+public class Group extends Model<Group> {
 
     private static final long serialVersionUID = 1L;
 
@@ -28,5 +31,11 @@ public class Group implements Serializable{
     private Long pid;
 
     private Integer state;
+
+
+    @Override
+    protected Serializable pkVal() {
+        return this.id;
+    }
 
 }

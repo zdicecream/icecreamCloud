@@ -1,9 +1,11 @@
 package com.zdinit.icecreamcloud.common.feign;
 
 
-import com.zdinit.icecreamcloud.common.entity.sys.entity.Resource;
-import com.zdinit.icecreamcloud.common.entity.sys.entity.Role;
+import com.zdinit.icecreamcloud.common.entity.sys.entity.ResourceVo;
+import com.zdinit.icecreamcloud.common.entity.sys.entity.RoleVo;
+//import com.zdinit.icecreamcloud.common.feign.config.FeignInterceptor;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -16,10 +18,11 @@ import java.util.List;
 @FeignClient(name = "provide",fallbackFactory = ProvideFeignFallbackFactory.class)
 
  */
-@FeignClient(name = "resource",fallbackFactory = ResourceFeignFallbackFactory.class)
+@Component
+@FeignClient(name = "authority",fallbackFactory = ResourceFeignFallbackFactory.class)
 public interface IResourceFeign {
-    @RequestMapping(value = "/listResourceByUserId",method = RequestMethod.GET)
-    List<Resource> listResourceByUserId(Long id);
-    @RequestMapping(value = "/listRoleByUserId",method = RequestMethod.GET)
-    List<Role> listRoleByUserId();
+    @RequestMapping(value = "/sys/resource/listResourceByUserId",method = RequestMethod.GET)
+    List<ResourceVo> listResourceByUserId(Long id);
+    @RequestMapping(value = "/sys/resource/listRoleByUserId",method = RequestMethod.GET)
+    List<RoleVo> listRoleByUserId(Long id);
 }

@@ -1,17 +1,21 @@
 package com.zdinit.icecreamcloud.dispatch.task;
 
 import com.zdinit.icecreamcloud.dispatch.config.QuartzConfig;
+import lombok.extern.slf4j.Slf4j;
 import org.quartz.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
+import java.util.Calendar;
+
 /**
  * 定时任务触发Runner
  */
 @Component
 @Order(1)
+@Slf4j
 public class TaskRunner implements CommandLineRunner {
 
     @Autowired
@@ -30,6 +34,7 @@ public class TaskRunner implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         this.scheduleJobs();
+        log.info(WECAT_TASK+"服务启动:"+ Calendar.getInstance().getTime());
     }
 
     /**

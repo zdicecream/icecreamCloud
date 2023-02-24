@@ -7,8 +7,8 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.zdinit.icecreamcloud.authority.sys.mapper.ResourceMapper;
 import com.zdinit.icecreamcloud.authority.sys.service.IResourceService;
 import com.zdinit.icecreamcloud.common.base.base.CommonValue;
-import com.zdinit.icecreamcloud.common.entity.sys.entity.Resource;
-import com.zdinit.icecreamcloud.common.entity.sys.entity.Role;
+import com.zdinit.icecreamcloud.authority.sys.entity.Resource;
+import com.zdinit.icecreamcloud.authority.sys.entity.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
@@ -208,14 +208,8 @@ public class ResourceServiceImpl extends ServiceImpl<ResourceMapper, Resource> i
 
     @Override
     public List<Resource> listResourceByUserId(Long id) {
-        if(redisTemplate.hasKey("Resource{"+id+"}")){
-            List<Resource> res = (List<Resource>) redisTemplate.opsForValue().get("Resource{"+id+"}");
-            return res;
-        }else {
-            List<Resource> res = this.baseMapper.listResourceByUserId(id);
-            redisTemplate.opsForValue().set("Resource{"+id+"}",res,5, TimeUnit.MINUTES);
-            return res;
-        }
+        List<Resource> res = this.baseMapper.listResourceByUserId(id);
+        return res;
     }
 
     private Map<Long, List<Resource>> packMap(List<Resource> list){

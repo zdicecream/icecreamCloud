@@ -1,7 +1,7 @@
 package com.zdinit.icecreamcloud.authority.sys.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.zdinit.icecreamcloud.common.entity.sys.entity.User;
+import com.zdinit.icecreamcloud.authority.sys.entity.User;
 
 import java.util.List;
 

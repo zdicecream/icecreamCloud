@@ -22,11 +22,11 @@ project
 　　　　|--base           
 　　　　　　|--base（response controller constant(常量) enums(枚举) exception）     
 　　　　　　|--config    
-　　　　　　　　|--序列化(fastJson、jackson)    
+　　　　　　　　|--序列化(fastJson、jackson**)    
 　　　　　　　　|--日志框架（logback）     
-　　　　　　　　|--全局异常
+　　　　　　　　|--全局异常  
 　　　　　　　　|--swagger2 接口文档           
-　　　　　　|--util（excel，httpClient，response）  
+　　　　　　|--util（excel，httpClient，responseUtil）  
 　　　　|--db  
 　　　　　　|--config  
 　　　　　　　　|--mybatis  
@@ -34,7 +34,7 @@ project
 　　　　　　　　|--DruidConfig Druid连接池  
 　　　　　　　　|--idGenerator id生成器（待定）  
 　　　　　　　　|--codeGenerator 代码生成器  
-　　　　|--entity 通用实体  
+　　　　|--entity Vo通用实体  
 　　　　|--feign 服务调用  
 　　　　|--redis  
 　　　　　　|--config   
@@ -43,6 +43,7 @@ project
 　　　　|--config (权限认证，登录异常处理)  
 　　|--dispatch（Quartz或者xxl-job）调度(和springBatch批量任务合并)  
 　　|--auth 权限  
+　　　　|--config (登录后做权限登记)  
 　　　　|--auth  
 　　　　　　|--controller  
 　　　　　　|--entity  
@@ -57,6 +58,7 @@ project
 　　　　　　|--通知公告  
 　　　　　　|--产品类型  
 　　　　|--外围通讯  
+　　　　　　|--kafka    
 　　　　　　|--接口注册  
 　　　　　　|--报文日志查询  
 　　　　　　|--通讯状态  

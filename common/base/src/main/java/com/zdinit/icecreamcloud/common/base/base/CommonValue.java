@@ -53,5 +53,20 @@ public class CommonValue {
      * 工作流-不同意
      */
     public static final String FLOW_NO = "no";
-
+    /**
+     * redis 前缀
+     */
+    public static final String TOKEN_NAME =CommonValue.TOKEN_NAME_PART1+":"+CommonValue.TOKEN_NAME_PART2+":"+CommonValue.TOKEN_NAME_PART3+":";
+    /**
+     * redis 前缀
+     */
+    public static final String TOKEN_NAME_PART1 = "Access-Token";
+    /**
+     * redis 前缀
+     */
+    public static final String TOKEN_NAME_PART2 = "login";
+    /**
+     * redis 前缀
+     */
+    public static final String TOKEN_NAME_PART3 = "authority";
 }

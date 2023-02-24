@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.zdinit.icecream.sys.mapper.ResourceMapper">
+<mapper namespace="com.zdinit.icecreamcloud.authority.sys.mapper.ResourceMapper">
+
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="com.zdinit.icecream.sys.entity.Resource">
+    <resultMap id="BaseResultMap" type="com.zdinit.icecreamcloud.authority.sys.entity.Resource">
         <id column="id" property="id" />
         <result column="resourcename" property="resourceName" />
         <result column="pid" property="pid" />
@@ -16,7 +17,7 @@
         id, resourcename, pid, orders, level, url, icon, type, state
     </sql>
 
-    <select id="listResourceByids" resultType="com.zdinit.icecream.sys.entity.Resource">
+    <select id="listResourceByids" resultType="com.zdinit.icecreamcloud.authority.sys.entity.Resource">
         select sr.*,srr.role_id from sys_resource sr left join sys_role_resource srr on srr.resource_id=sr.id
         where srr.role_id in
         <foreach item="item" index="index" collection="list"
@@ -25,7 +26,7 @@
         </foreach>
     </select>
 
-    <select id="listResourceByid" resultType="com.zdinit.icecream.sys.entity.Resource" >
+    <select id="listResourceByid" resultType="com.zdinit.icecreamcloud.authority.sys.entity.Resource" >
         select sr.*,srr.role_id from sys_resource sr left join sys_role_resource srr on srr.resource_id=sr.id
         where srr.role_id = #{id}
     </select>
@@ -42,12 +43,12 @@
         insert into sys_role_resource values (#{roleId},#{resourceId})
     </insert>
 
-    <select id="listRoleByResourceId" resultType="com.zdinit.icecream.sys.entity.Role">
+    <select id="listRoleByResourceId" resultType="com.zdinit.icecreamcloud.authority.sys.entity.Role">
         select sr.* from sys_role sr left join sys_role_resource srr on srr.role_id=sr.id
         where srr.resource_id = #{id}
     </select>
 
-    <select id="listResourceByUserId" resultType="com.zdinit.icecream.sys.entity.Resource">
+    <select id="listResourceByUserId" resultType="com.zdinit.icecreamcloud.authority.sys.entity.Resource">
         select sr.* from sys_user_role sur,sys_role_resource srr,sys_resource sr where sur.role_id=srr.role_id and srr.resource_id=sr.id and sur.user_id= #{id}
     </select>
 </mapper>
