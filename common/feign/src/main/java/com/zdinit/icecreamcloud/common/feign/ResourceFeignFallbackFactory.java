@@ -4,8 +4,8 @@ package com.zdinit.icecreamcloud.common.feign;
 
 import com.zdinit.icecreamcloud.common.entity.sys.entity.ResourceVo;
 import com.zdinit.icecreamcloud.common.entity.sys.entity.RoleVo;
-import feign.hystrix.FallbackFactory;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cloud.openfeign.FallbackFactory;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

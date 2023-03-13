@@ -1,0 +1,30 @@
+server:
+  port: 8802
+spring:
+  security:
+    user:
+      name: "admin"
+      password: "admin"
+  application:
+    name: monitor
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+  config:
+    import:
+      - optional:nacos:monitor.yaml
+#健康监测
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+    logfile:
+      external-file: logs/${spring.application.name}.log

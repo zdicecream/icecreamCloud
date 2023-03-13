@@ -1,0 +1,23 @@
+#端口号
+server:
+  port: 8010
+spring:
+  application:
+    name: authority
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+    loadbalancer:
+      ribbon:
+        enabled: false
+  config:
+    import:
+      - optional:nacos:authority.yaml
+##openFeign整合sentinel熔断
+feign:
+  sentinel:
+    enabled: true

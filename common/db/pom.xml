@@ -7,6 +7,9 @@
         <groupId>com.zdinit</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
+    <properties>
+        <h2.version>2.1.214</h2.version>
+    </properties>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>db</artifactId>
@@ -22,7 +25,8 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <version>2.1.214</version>
+            <version>${h2.version}</version>
+            <scope>runtime</scope>
         </dependency>
         <!-- Druid连接池 -->
         <dependency>
@@ -36,12 +40,12 @@
             <artifactId>mybatis-plus-generator</artifactId>
             <version>${mybatis-plus-boot}</version>
         </dependency>
-        <!--mybatis-->
-        <dependency>
-            <groupId>org.mybatis</groupId>
-            <artifactId>mybatis</artifactId>
-            <version>3.5.3</version>
-        </dependency>
+<!--        &lt;!&ndash;mybatis&ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>org.mybatis</groupId>-->
+<!--            <artifactId>mybatis</artifactId>-->
+<!--            <version>3.5.3</version>-->
+<!--        </dependency>-->
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>

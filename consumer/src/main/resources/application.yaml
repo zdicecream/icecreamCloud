@@ -1,0 +1,22 @@
+server:
+  port: 8003
+spring:
+  application:
+    name: consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+      config:
+        server-addr: 127.0.0.1:8848
+        file-extension: yaml
+    loadbalancer:
+      ribbon:
+        enabled: false
+  config:
+    import:
+      - optional:nacos:consumer.yaml
+##openFeign整合sentinel熔断
+feign:
+  sentinel:
+    enabled: true

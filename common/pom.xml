@@ -17,7 +17,28 @@
         <module>entity</module>
         <module>feign</module>
         <module>redis</module>
+        <module>xxl-job-core</module>
     </modules>
+    <licenses>
+        <license>
+            <name>GNU General Public License version 3</name>
+            <url>https://opensource.org/licenses/GPL-3.0</url>
+        </license>
+    </licenses>
 
+    <scm>
+        <tag>master</tag>
+        <url>https://github.com/xuxueli/xxl-job.git</url>
+        <connection>scm:git:https://github.com/xuxueli/xxl-job.git</connection>
+        <developerConnection>scm:git:git@github.com:xuxueli/xxl-job.git</developerConnection>
+    </scm>
+    <developers>
+        <developer>
+            <id>XXL</id>
+            <name>xuxueli</name>
+            <email>931591021@qq.com</email>
+            <url>https://github.com/xuxueli</url>
+        </developer>
+    </developers>
 
 </project>

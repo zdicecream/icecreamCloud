@@ -9,7 +9,7 @@ import org.springframework.stereotype.Component;
 import java.util.Calendar;
 
 @Component
-@Order(3)
+@Order(1)
 @Slf4j
 public class ServerRunner implements CommandLineRunner {
 
@@ -18,6 +18,7 @@ public class ServerRunner implements CommandLineRunner {
     public void run(String... args) {
         start();
         log.info("Netty接口服务端启动:"+Calendar.getInstance().getTime());
+        log.info("端口{}",110);
     }
 
     public void start(){

@@ -31,7 +31,7 @@ project
 　　　　　　|--config  
 　　　　　　　　|--mybatis  
 　　　　　　　　|--mybatis-plus  
-　　　　　　　　|--DruidConfig Druid连接池  
+　　　　　　　　|--连接池Config (springboot默认HiKariCP或Druid)  
 　　　　　　　　|--idGenerator id生成器（待定）  
 　　　　　　　　|--codeGenerator 代码生成器  
 　　　　|--entity Vo通用实体  
@@ -57,7 +57,7 @@ project
 　　　　　　|--基础数据管理  
 　　　　　　|--通知公告  
 　　　　　　|--产品类型  
-　　　　|--外围通讯  
+　　　　|--外围通讯(communications)  
 　　　　　　|--kafka    
 　　　　　　|--接口注册  
 　　　　　　|--报文日志查询  

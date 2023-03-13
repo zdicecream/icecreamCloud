@@ -27,18 +27,38 @@
             <artifactId>redis</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
-        <!--定时调度任务-->
+        <dependency>
+            <groupId>com.zdinit</groupId>
+            <artifactId>xxl-job-core</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <!--改为使用xxl-job 暂时注释 -->
+<!--        &lt;!&ndash;定时调度任务&ndash;&gt;
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
-        <!--批处理-->
+        &lt;!&ndash;批处理&ndash;&gt;
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-batch</artifactId>
             <version>2.7.5</version>
             <type>pom</type>
+        </dependency>-->
+
+
+        <!-- freemarker-starter -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-freemarker</artifactId>
         </dependency>
+
+        <!-- mail-starter -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-mail</artifactId>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>
