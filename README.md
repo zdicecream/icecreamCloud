@@ -9,7 +9,7 @@
 |服务熔断|sentinel|
 |服务调用|openFeign|
 |服务路由|gateway|
-|消息队列|rocketMQ|
+|消息队列|Kafka|
 |负载均衡|Spring Cloud Loadbalancer|
 |分布式事务|seata|
 
@@ -26,7 +26,7 @@ project
 　　　　　　　　|--日志框架（logback）     
 　　　　　　　　|--全局异常  
 　　　　　　　　|--swagger2 接口文档           
-　　　　　　|--util（excel，httpClient，responseUtil）  
+　　　　　　|--util（excel，httpClient，responseUtil，hutool（暂定））  
 　　　　|--db  
 　　　　　　|--config  
 　　　　　　　　|--mybatis  

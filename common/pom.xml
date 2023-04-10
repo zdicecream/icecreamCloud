@@ -18,6 +18,7 @@
         <module>feign</module>
         <module>redis</module>
         <module>xxl-job-core</module>
+        <module>kafka</module>
     </modules>
     <licenses>
         <license>
