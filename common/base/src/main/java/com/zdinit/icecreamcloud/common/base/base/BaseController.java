@@ -28,7 +28,7 @@ public abstract class BaseController {
         //获取请求参数
         Page page = new Page();
         String pageNoS = request.getParameter("pageNo");
-        Long pageNo = StringUtils.isBlank(pageNoS) ? 1l :Long.parseLong(pageNoS);
+        Long pageNo = StringUtils.isBlank(pageNoS) ? 1L :Long.parseLong(pageNoS);
         String pageSizeS = request.getParameter("pageSize");
         Long pageSize = StringUtils.isBlank(pageSizeS) ? 10L : Long.parseLong(pageSizeS);
         String sortFieldS = request.getParameter("sortField");

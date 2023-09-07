@@ -63,8 +63,7 @@ public class JobRegistryHelper {
 						if (groupList!=null && !groupList.isEmpty()) {
 							Calendar calendar = Calendar.getInstance();
 
-							calendar.setTime(new Date());
-							calendar.add(Calendar.SECOND,RegistryConfig.DEAD_TIMEOUT);
+							logger.info(String.valueOf(calendar.getTime()));
 							// remove dead address (admin/executor)
 							List<Integer> ids = XxlJobAdminConfig.getAdminConfig().getXxlJobRegistryDao().findDead(RegistryConfig.DEAD_TIMEOUT, calendar.getTime());
 							if (ids!=null && ids.size()>0) {
@@ -73,8 +72,7 @@ public class JobRegistryHelper {
 
 							// fresh online address (admin/executor)
 							HashMap<String, List<String>> appAddressMap = new HashMap<String, List<String>>();
-							calendar.setTime(new Date());
-							calendar.add(Calendar.SECOND,RegistryConfig.DEAD_TIMEOUT);
+							logger.info(String.valueOf(calendar.getTime()));
 							List<XxlJobRegistry> list = XxlJobAdminConfig.getAdminConfig().getXxlJobRegistryDao().findAll(RegistryConfig.DEAD_TIMEOUT, calendar.getTime());
 							if (list != null) {
 								for (XxlJobRegistry item: list) {

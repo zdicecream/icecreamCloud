@@ -1,9 +1,12 @@
 package com.zdinit.icecreamcloud.consumer.job;
 
 
+import com.alibaba.nacos.shaded.org.checkerframework.checker.units.qual.A;
 import com.zdinit.icecreamcloud.common.xxljobcore.context.XxlJobHelper;
 import com.zdinit.icecreamcloud.common.xxljobcore.handler.annotation.XxlJob;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
 
 import java.io.BufferedInputStream;
@@ -29,6 +32,8 @@ import java.util.concurrent.TimeUnit;
 @Slf4j
 @Component
 public class SampleJob {
+    @Autowired
+    private KafkaTemplate kafkaTemplate;
 
 
     /**
@@ -38,11 +43,13 @@ public class SampleJob {
     public void demoJobHandler() throws Exception {
         XxlJobHelper.log("XXL-JOB, Hello World.");
 
-        for (int i = 0; i < 5; i++) {
-            XxlJobHelper.log("beat at:" + i);
-            TimeUnit.SECONDS.sleep(2);
-        }
-        // default success
+//        for (int i = 0; i < 5; i++) {
+//            XxlJobHelper.log("beat at:" + i);
+//            TimeUnit.SECONDS.sleep(2);
+//        }
+//        // default success
+
+        kafkaTemplate.send("one",1);
     }
 
 
